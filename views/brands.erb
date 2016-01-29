@@ -1,24 +1,22 @@
 <div class="container">
-<div class="page-header">
-  <h1>Brands</h1>
-</div>
+  <div class="page-header">
+    <h1>Brands</h1>
+  </div>
 
-
-<ul>
-  <% @brands.each do |brand| %>
-    <li><a href="/brands/<%= brand.id %>"><%= brand.brand_name %></a></li>
+  <ul>
+    <% @brands.each do |brand| %>
+      <li><a href="/brands/<%= brand.id %>"><%= brand.brand_name %></a></li>
     <% end %>
   </ul>
 
-<form class="form-inline" action="/brands" method="post">
-  <div class="form-group">
-    <label>Add a Brand:</label>
-    <input type="text" class="form-control" id="brand_name" name="brand_name">
-  </div>
-  <button type="submit" class="btn btn-default">Add Brand</button>
-</form>
+  <form class="form-inline" action="/brands" method="post">
+    <div class="form-group">
+      <label>Add a Brand:</label>
+      <input type="text" class="form-control" id="brand_name" name="brand_name">
+    </div>
+    <button type="submit" class="btn btn-default">Add Brand</button>
+  </form>
 
-
-
-<a href="/">HOME</a>
+  <a href="/">HOME</a>
+  
 </div>

@@ -40,8 +40,6 @@ patch('/stores/:id/edit') do
   erb(:store)
 end
 
-# brands in prog
-
 get('/brands') do
   @brands = Brand.all
   erb(:brands)
@@ -79,17 +77,3 @@ patch('/stores/:id/brands') do
   @store.brands.push(@brand)
   erb(:store)
 end
-
-
-
-
-
-
-# post('/stores/:id/brands') do
-#  brand_name = params.fetch('brand_name')
-#  @brand = Brand.create({brand_name: brand_name})
-#  @brands = Brand.all
-#  @store = Store.find(params.fetch("id").to_i)
-#  @store.brands.push(@brand)
-#  erb(:store)
-# end
