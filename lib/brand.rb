@@ -1,9 +1,7 @@
 class Brand < ActiveRecord::Base
   has_and_belongs_to_many(:stores)
 
-
-
-    before_save(:titleize_brand_name)
+  before_save(:titleize_brand_name)
 
     private
 
