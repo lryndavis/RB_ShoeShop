@@ -33,6 +33,7 @@ delete('/stores/:id/delete') do
 end
 
 patch('/stores/:id/edit') do
+  @brands = Brand.all
   store_name = params.fetch('store_name')
   @store = Store.find(params.fetch("id").to_i)
   @store.update({:store_name => store_name})
