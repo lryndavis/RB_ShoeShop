@@ -1,17 +1,17 @@
 <div class="container">
-  <div class="linkbar">
+<div class="page-header">
     <h1><%= @brand.brand_name %></h1>
   </div>
-
+<div class="linkbar">
   <h3><%= @brand.brand_name %> is sold at the following stores:</h3>
-
+</div>
   <ul>
     <% @brand.stores.each do |store| %>
       <li><a href="/stores/<%= store.id %>"><%= store.store_name %></a></li>
     <% end %>
   </ul>
 
-  <form class="class-inline" form action="/brands/<%= @brand.id %>/edit" method="post">
+  <form class="form-inline" form action="/brands/<%= @brand.id %>/edit" method="post">
     <input type="hidden" name="_method" value="patch">
     <label>Update Brand Name</label>
     <input type="text" class="form-control" id="brand_name" name="brand_name">

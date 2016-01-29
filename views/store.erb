@@ -32,7 +32,9 @@
   <input type="text" class="form-control" id="store_name" name="store_name">
   <button type="submit" class="btn btn-default">Update Shop</button>
 </form>
+
 <br>
+
 <form class="class-inline" form action="/stores/<%= @store.id() %>/delete" method="post">
   <input type="hidden" name="_method" value="delete">
   <button type="submit" class="btn btn-danger">Delete this Store</button>

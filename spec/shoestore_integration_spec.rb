@@ -24,44 +24,44 @@ require('spec_helper')
     end
   end
 
-describe('the path to update a shoe store', {:type => :feature}) do
-  it('allows a user to update the name of a shoe store') do
-    visit('/')
-    click_link("SHOPS")
-    fill_in('store_name', :with => "Solestruck")
-    click_button('Add')
-    expect(page).to have_content('Solestruck')
-    click_link('Solestruck')
-    expect(page).to have_content('Solestruck carries the following brands:')
-    fill_in('store_name', :with => "Solestruck Shop")
-    click_button('Update Shop')
-    expect(page).to have_content('Solestruck Shop')
-  end
-end
-
-  describe('the path to add a brand', {:type => :feature}) do
-    it('allows a user to add a brand to a shoe store') do
+  describe('the path to update a shoe store', {:type => :feature}) do
+    it('allows a user to update the name of a shoe store') do
       visit('/')
-      click_link('SHOPS')
+      click_link("SHOPS")
       fill_in('store_name', :with => "Solestruck")
       click_button('Add')
       expect(page).to have_content('Solestruck')
-      click_link('HOME')
-      expect(page).to have_content('SHOE FINDER')
-      click_link('BRANDS')
-      expect(page).to have_content('Current Brands')
-      fill_in('brand_name', :with => "Fancy Boots")
-      click_button('Add Brand')
-      expect(page).to have_content('Fancy Boots')
-      click_link('HOME')
-      click_link('SHOPS')
       click_link('Solestruck')
       expect(page).to have_content('Solestruck carries the following brands:')
-      select "Fancy Boots", :from => "brand_id"
-      click_button('Add')
-      expect(page).to have_content('Fancy Boots')
+      fill_in('store_name', :with => "Solestruck Shop")
+      click_button('Update Shop')
+      expect(page).to have_content('Solestruck Shop')
     end
   end
+
+    describe('the path to add a brand', {:type => :feature}) do
+      it('allows a user to add a brand to a shoe store') do
+        visit('/')
+        click_link('SHOPS')
+        fill_in('store_name', :with => "Solestruck")
+        click_button('Add')
+        expect(page).to have_content('Solestruck')
+        click_link('HOME')
+        expect(page).to have_content('SHOE FINDER')
+        click_link('BRANDS')
+        expect(page).to have_content('Current Brands')
+        fill_in('brand_name', :with => "Fancy Boots")
+        click_button('Add Brand')
+        expect(page).to have_content('Fancy Boots')
+        click_link('HOME')
+        click_link('SHOPS')
+        click_link('Solestruck')
+        expect(page).to have_content('Solestruck carries the following brands:')
+        select "Fancy Boots", :from => "brand_id"
+        click_button('Add')
+        expect(page).to have_content('Fancy Boots')
+      end
+    end
 
     describe('the path to update a brand', {:type => :feature}) do
       it('allows a user to update the name of a brand') do
