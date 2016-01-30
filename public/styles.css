@@ -56,3 +56,17 @@ h4 {
 #button1 {
   margin-top: 20px;
 }
+
+ul {
+  list-style: none;
+}
+
+ a:visited, a:link, a:active {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: #4d4d4d;
+
+}
