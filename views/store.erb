@@ -13,6 +13,7 @@
       </ul>
 
     <h3>Add Brands</h3>
+    <div class="buttonsection">
     <form action="/stores/<%= @store.id %>/brands" method="post" form class="form-inline">
       <input name="_method" type="hidden" value="patch">
       <select id="brand_id" name="brand_id" class="form-control">
@@ -34,8 +35,10 @@
 
     <form class="class-inline" form action="/stores/<%= @store.id() %>/delete" method="post">
       <input type="hidden" name="_method" value="delete">
-      <button type="submit" class="btn btn-danger">Delete this Store</button>
+      <button type="submit" class="btn btn-danger" id="button1">Delete this Store</button>
     </form>
+  </div>
     <br>
   </div>
+  <a href="/">HOME</a>
 </div>
