@@ -1,30 +1,21 @@
 <div class="container">
   <div class="page-header">
-    <h1>SHOPS</h1>
+    <h1>SHOE FINDER</h1>
+    <h4>Search local shoe stores for your favorite brands</h4>
   </div>
 
-  <div class="row">
-    <div class="col-md-6">
-      <ul>
-        <% @stores.each do |store| %>
+<div class="column1">
+  <h2>CURRENT SHOPS</h2>
+    <ul>
+      <% @stores.each do |store| %>
         <li><a href="/stores/<%= store.id %>"><%= store.store_name %></a></li>
-        <% end %>
-      </ul>
-    </div>
+      <% end %>
+    </ul>
+
+  <h2>ADD A SHOP</h2>
+    <form action="/stores" method="post" class="form-inline">
+      <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Your Store">
+      <button type="submit" class="btn btn-default">Add</button>
+    </form>
   </div>
-
-  <div class="row">
-    <div class="col-md-6">
-      <form action="/stores" method="post" class="form-inline">
-        <div class="form-group">
-          <label>Add a Store:</label>
-          <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Your Store">
-        </div>
-        <button type="submit" class="btn btn-default">Add</button>
-      </form>
-    </div>
-  </div>
-
-  <a href="/">HOME</a>
-
 </div>
