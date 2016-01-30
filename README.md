@@ -2,7 +2,7 @@
 #### By Lauryn Davis
 
 ### Project
-Shoe Finder is a simple Ruby app that utilizes Active Record. It allows the user to input stores and brand names, and create associations between the two through use of a many to many join table.
+Shoe Finder is a simple Ruby app that utilizes Active Record. It allows the user to input stores and brand names, and creates associations between the two through use of a many to many join table.
 
 ### Setup
 
