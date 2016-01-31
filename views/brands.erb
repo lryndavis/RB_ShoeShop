@@ -5,9 +5,14 @@
   </div>
 
   <div class="wrapper">
-    <h2>CURRENT BRANDS</h2>
-      <% @brands.each do |brand| %>
-        <p><a href="/brands/<%= brand.id %>"><%= brand.brand_name %></a></p>
+    <% if @brands.any? %>
+      <h2>CURRENT BRANDS</h2>
+        <% @brands.each do |brand| %>
+          <p><a href="/brands/<%= brand.id %>"><%= brand.brand_name %></a></p>
+        <% end %>
+        <% else %>
+          <p>Uh oh! No brands have been added yet!</p>
+          <p>Add some below!</p>
       <% end %>
 
     <div class='btnbar'>

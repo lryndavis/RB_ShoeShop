@@ -6,10 +6,15 @@
 
     <div class="wrapper">
       <h2><%= @store.store_name %></h2>
-        <h3><%= @store.store_name %> carries the following brands:</h3>
-          <% @store.brands.each do |brand| %>
-            <p><a href="/brands/<%= brand.id %>"><%= brand.brand_name %></a></p>
-          <% end %>
+        <% if @store.brands.any? %>
+          <h3><%= @store.store_name %> carries the following brands:</h3>
+            <% @store.brands.each do |brand| %>
+              <p><a href="/brands/<%= brand.id %>"><%= brand.brand_name %></a></p>
+              <% end %>
+              <% else %>
+                <p>Uh oh! No brands have been added to this shop yet!</p>
+                <p>Add some below!</p>
+              <% end %>
 
       <div class="btnbar">
         <h3>Add Brands</h3>

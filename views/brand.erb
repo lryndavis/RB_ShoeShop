@@ -6,10 +6,15 @@
 
   <div class="wrapper">
     <h2><%= @brand.brand_name %></h2>
-    <h3>Stockists</h3>
-      <% @brand.stores.each do |store| %>
-        <p><a href="/stores/<%= store.id %>"><%= store.store_name %></a></p>
-      <% end %>
+      <% if @brand.stores.any? %>
+        <h3>Stockists</h3>
+        <% @brand.stores.each do |store| %>
+          <p><a href="/stores/<%= store.id %>"><%= store.store_name %></a></p>
+        <% end %>
+        <% else %>
+          <p>Sorry! This brand is not currently sold at any local shops</p>
+        <% end %>
+        
     <div class="btnbar">
       <h3>Update Brand Info</h3>
     <form class="form-inline" form action="/brands/<%= @brand.id %>/edit" method="post">
