@@ -4,40 +4,38 @@
     <h4>Search local shoe stores for your favorite brands</h4>
   </div>
 
-  <div class="container1">
-     <h3><%= @store.store_name %> carries the following brands:</h3>
-       <ul>
-        <% @store.brands.each do |brand| %>
-        <li><a href="/brands/<%= brand.id %>"><%= brand.brand_name %></a></li>
-        <% end %>
-      </ul>
-
-    <h3>Add Brands</h3>
-    <div class="buttonsection">
-    <form action="/stores/<%= @store.id %>/brands" method="post" form class="form-inline">
-      <input name="_method" type="hidden" value="patch">
-      <select id="brand_id" name="brand_id" class="form-control">
-        <ul>
-          <% @brands.each do |brand| %>
-          <li><option value="<%= brand.id %>"><%= brand.brand_name %></option></li>
+    <div class="wrapper">
+      <h2><%= @store.store_name %></h2>
+        <h3><%= @store.store_name %> carries the following brands:</h3>
+          <% @store.brands.each do |brand| %>
+            <p><a href="/brands/<%= brand.id %>"><%= brand.brand_name %></a></p>
           <% end %>
-        </ul>
-      </select>
-      <button type="submit" class="btn btn-default">Add Brand</button>
-    </form>
 
-    <br>
-    <form class="form-inline" form action="/stores/<%= @store.id() %>/edit" method="post">
-      <input type="hidden" value="patch" name="_method">
-      <input type="text" class="form-control" id="store_name" name="store_name">
-      <button type="submit" class="btn btn-default">Update Shop Name</button>
-    </form>
+      <div class="btnbar">
+        <h3>Add Brands</h3>
+          <form action="/stores/<%= @store.id %>/brands" method="post" form class="">
+            <input name="_method" type="hidden" value="patch">
+            <select id="brand_id" name="brand_id" class="form-control">
+              <ul>
+                <% @brands.each do |brand| %>
+                  <li><option value="<%= brand.id %>"><%= brand.brand_name %></option></li>
+                <% end %>
+              </ul>
+            </select>
+            <button type="submit" class="btn btn-default btn-block" id="brandbtn">ADD</button>
+          </form>
 
-    <form class="class-inline" form action="/stores/<%= @store.id() %>/delete" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button type="submit" class="btn btn-danger" id="button1">Delete this Store</button>
-    </form>
+      <h3>Update Shop Info</h3>
+        <form class="form-inline" form action="/stores/<%= @store.id() %>/edit" method="post">
+          <input type="hidden" value="patch" name="_method">
+          <input type="text" class="form-control" id="store_name" name="store_name" placeholder="Shop Name">
+          <button type="submit" class="btn btn-default">UPDATE NAME</button>
+        </form>
+
+        <form class="class-inline" form action="/stores/<%= @store.id() %>/delete" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button type="submit" class="btn btn-default btn-block" id="button1">DELETE THIS STORE</button>
+        </form>
+      </div>
+    </div>
   </div>
-    <br>
-  </div>
-</div>
